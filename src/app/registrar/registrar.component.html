@@ -1,0 +1,30 @@
+<div class="contenedor">
+  <div id="contenido">
+    <div class="titulo" fxLayout="column" fxLayoutAlign="center start">
+      <div fxLayout="column" fxLayoutAlign="<main-axis> <cross-axis>">
+        <h1>Ingresa un número</h1>
+      </div>
+
+    </div>
+    <div id="contenido">
+      <div class="titulo" fxLayout="column" fxLayoutAlign="center start">
+        <div fxLayout="column" fxLayoutAlign="<main-axis> <cross-axis>">
+          <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Ingresa un número</mat-label>
+            <input matInput type="number" [(ngModel)]="numero.numero">
+
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="<main-axis> <cross-axis>">
+          <button mat-stroked-button color="primary" (click)="registrar()" [disabled]="numero.numero==undefined">Agregar</button>
+        </div>
+       <div *ngIf="bandera">
+        <mat-label>Los multiplos son</mat-label>
+
+        <ul>
+          <li *ngFor="let role of resultado"  [ngStyle]="{'color': comparar(role)}">{{role}}</li>
+      </ul>
+       </div>
+      </div>
+
+</div>
